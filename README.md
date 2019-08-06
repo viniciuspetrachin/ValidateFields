@@ -16,6 +16,9 @@ This class aims to facilitate the means of verifying the fields of email, passwo
 # Available Methods
 
 > isEmailValid(editText);
+
 > isPasswordValid(editText);
+
 > isZipCodeValid(editText);
+
 > isAllFieldsValid(editTextEmail, editTextPassword, editTextZipCode);
