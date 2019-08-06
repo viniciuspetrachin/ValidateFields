@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editTextEmail, editTextPassword;
+    EditText editTextEmail, editTextPassword, editTextZipCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.ui_editText_email);
         editTextPassword = findViewById(R.id.ui_editText_password);
+        editTextZipCode = findViewById(R.id.ui_editText_zipcode);
 
     }
 
@@ -54,9 +55,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void button_check_both(View view){
+    public void button_check_all(View view){
         ValidateFields validateFields = new ValidateFields(getApplicationContext());
-        if(validateFields.isEmailPasswordValid(editTextEmail, editTextPassword)){
+        if(validateFields.isAllFieldsValid(editTextEmail, editTextPassword, editTextZipCode)){
+            Toast.makeText(this, "Valid", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void button_check_zipcode(View view){
+        ValidateFields validateFields = new ValidateFields(getApplicationContext());
+        if(validateFields.isZipCodeValid(editTextZipCode)){
             Toast.makeText(this, "Valid", Toast.LENGTH_SHORT).show();
         } else{
             Toast.makeText(this, "Invalid", Toast.LENGTH_SHORT).show();

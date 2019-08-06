@@ -7,27 +7,50 @@
     tools:context=".MainActivity">
 
 
+    <EditText
+        android:id="@+id/ui_editText_zipcode"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="ZIPCODE"
+        app:layout_constraintStart_toStartOf="@+id/ui_editText_zipcode"
+        app:layout_constraintTop_toBottomOf="@+id/ui_editText_password" />
+
     <Button
         android:id="@+id/ui_button_check_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Check Email"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="2dp"
         android:onClick="button_check_email"
+        android:text="Check Email"
         app:layout_constraintBottom_toTopOf="@+id/ui_button_check_password"
-        app:layout_constraintEnd_toEndOf="@+id/ui_button_check_password"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/ui_button_check_password" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_editText_zipcode" />
 
     <EditText
         android:id="@+id/ui_editText_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -35,11 +58,11 @@
         android:id="@+id/ui_editText_password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -47,7 +70,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="151dp"
+        android:layout_marginTop="18dp"
         android:text="email"
         app:layout_constraintStart_toStartOf="@+id/ui_editText_email"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,7 +79,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
         android:text="password"
         app:layout_constraintStart_toStartOf="@+id/ui_editText_password"
         app:layout_constraintTop_toBottomOf="@+id/ui_editText_email" />
@@ -64,22 +87,42 @@
     <Button
         android:id="@+id/ui_button_check_password"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
         android:onClick="button_check_password"
         android:text="Check Password"
-        app:layout_constraintBottom_toTopOf="@+id/ui_button_check_emailpassword"
-        app:layout_constraintEnd_toEndOf="@+id/ui_button_check_emailpassword"
-        app:layout_constraintStart_toStartOf="@+id/ui_button_check_emailpassword" />
+        app:layout_constraintBottom_toTopOf="@+id/ui_button_check_zipcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_button_check_email" />
 
     <Button
-        android:id="@+id/ui_button_check_emailpassword"
+        android:id="@+id/ui_button_check_zipcode"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="2dp"
+        android:onClick="button_check_zipcode"
+        android:text="Check ZIPCODE"
+        app:layout_constraintBottom_toTopOf="@+id/ui_button_check_all"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_button_check_password" />
+
+    <Button
+        android:id="@+id/ui_button_check_all"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Check Both"
-        android:onClick="button_check_both"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="button_check_all"
+        android:text="Check All"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ui_button_check_zipcode" />
 </android.support.constraint.ConstraintLayout>

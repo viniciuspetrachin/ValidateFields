@@ -22,7 +22,9 @@ public class ValidateFields {
 
     private Context context;
     // You can substitute the regex code below for one that suits you best.
-    private Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=*])(?=\\S+$).*$");
+    private Pattern pattern_password = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=*])(?=\\S+$).*$");
+    // Accepts the following formats: 12.345-678 | 12345-678 | 12345678
+    private Pattern pattern_zipcode = Pattern.compile("(^\\d{5}-\\d{3}|^\\d{2}.\\d{3}-\\d{3}|\\d{8})");
     // Set the minimum characters the password must contain.
     private static final int PASSWORD_LENGTH = 8;
 
@@ -51,7 +53,7 @@ public class ValidateFields {
 
     boolean isPasswordValid(EditText editText){
         String password = editText.getText().toString();
-        Matcher matcher = pattern.matcher(password.trim());
+        Matcher matcher = pattern_password.matcher(password.trim());
         // Checks if password field is empty
         if (password.equals("")) {
             editText.setError(context.getString(R.string.password_field_empty));
@@ -74,8 +76,24 @@ public class ValidateFields {
         }
     }
 
-    boolean isEmailPasswordValid(EditText editTextEmail, EditText ediTextPassword){
-        return isEmailValid(editTextEmail) && isPasswordValid(ediTextPassword);
+    boolean isAllFieldsValid(EditText editTextEmail, EditText ediTextPassword, EditText editTextZipCode){
+        return isEmailValid(editTextEmail) && isPasswordValid(ediTextPassword) && isZipCodeValid(editTextZipCode);
+    }
+    boolean isZipCodeValid(EditText editText){
+        String zipcode = editText.getText().toString();
+        Matcher matcher = pattern_zipcode.matcher(zipcode);
+        if(zipcode.equals("")){
+            editText.setError(context.getString(R.string.zipcode_field_empty));
+            editText.requestFocus();
+        }
+        if (!matcher.matches()) {
+            editText.setError(context.getString(R.string.please_enter_a_valid_zipcode));
+            editText.requestFocus();
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
 }
