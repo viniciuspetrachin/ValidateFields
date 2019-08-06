@@ -2,5 +2,8 @@
     <string name="app_name">Validate Fields</string>
     <string name="please_enter_a_valid_email">Please enter a valid email</string>
     <string name="email_field_empty">Email field cannot be empty</string>
+    <string name="password_field_empty">Password field cannot be empty</string>
+    <string name="password_must_long">Password must be longer than</string>
+    <string name="characters">characters</string>
     <string name="password_must_contain">The password must contain uppercase letter, lowercase letter, number and special character</string>
 </resources>
