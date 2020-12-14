@@ -6,8 +6,6 @@ This class aims to facilitate the means of verifying the fields of email, passwo
 - [x] Validate Email
 - [x] Validate Password
 - [x] Validate ZIP Code
-- [ ] Validate CPF
-- [ ] Validate RG
 
 # How to instantiate the class?
 
